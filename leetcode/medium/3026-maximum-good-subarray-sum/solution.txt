@@ -1,0 +1,12 @@
+class Solution {
+public:
+    long long maximumSubarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        long long curr_prefix_sum=0;
+        long long maxSum=LLONG_MIN;
+        unordered_map<int,long long> map;//map to store the prefix[i-1] -> to calculate the actual prefixSum
+        for(int i=0; i < n; i++){
+            long long prevSum = curr_prefix_sum;
+            curr_prefix_sum+=nums[i];
+            int target1=(long long)nums[i]-k;
+            int target2=(long long)n
