@@ -1,0 +1,26 @@
+       // Arrays.fill(n, 0);
+        prefix[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i - 1] + nums[i];
+        }
+        // prefix[j] - prefix[i] = n*k 
+        // prefix[j]= n*k + prefix[i]
+        // n = {1, prefix[n-1]/k}
+        Map<Integer, Integer> map = new HashMap<>();
+        // map.put(0, 1);
+        map.put(0, -1);
+        for (int i = 0; i < n; i++) {
+            int x = prefix[i] % k;
+            System.out.println(x + " " + i);
+            if (map.containsKey(x)) {
+                if(i-map.get(x)>=2){
+                    return true;
+                }
+            }else{
+                map.put(x, i);
+            }
+            // if(nums[i] != 0)
+        }
+        return false;
+    }
+}
