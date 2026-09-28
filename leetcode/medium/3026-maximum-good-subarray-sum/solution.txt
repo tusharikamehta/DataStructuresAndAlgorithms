@@ -9,18 +9,4 @@ public:
             long long prevSum = curr_prefix_sum;
             curr_prefix_sum+=nums[i];
             int target1=(long long)nums[i]-k;
-            int target2=(long long)nums[i]+k;
-
-            if(map.find(target1) != map.end()){
-                maxSum = max(maxSum,curr_prefix_sum-map[target1]);
-            }
-            if(map.find(target2) != map.end()){
-                maxSum = max(maxSum,curr_prefix_sum-map[target2]);
-            }
-            if(!map.count(nums[i]) || prevSum < map[nums[i]]){
-                map[nums[i]]=prevSum;
-            }
-        }
-        return maxSum == LLONG_MIN ? 0 : maxSum;
-    }
-};
+            int target2=(long long)n
