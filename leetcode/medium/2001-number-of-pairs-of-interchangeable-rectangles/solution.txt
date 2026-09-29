@@ -1,0 +1,28 @@
+   }
+        return a;
+    }
+
+    public long interchangeableRectangles(int[][] rectangles) {
+        Map<String, Long> ratioCounts = new HashMap<>();
+        
+        for (int[] rect : rectangles) {
+            int w = rect[0];
+            int h = rect[1];
+            int gcd = findGCD(w, h);
+            
+            String ratio = (w / gcd) + ":" + (h / gcd);
+            
+            ratioCounts.put(ratio, ratioCounts.getOrDefault(ratio, 0L) + 1);
+        }
+
+        long totalPairs=0;
+        
+        for (long count : ratioCounts.values()) {
+            if (count > 1) {
+                totalPairs += (count * (count - 1)) / 2;
+            }
+        }
+        
+        return totalPairs;
+    }
+}
