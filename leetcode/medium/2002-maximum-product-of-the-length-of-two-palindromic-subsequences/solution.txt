@@ -1,0 +1,20 @@
+c(s, idx + 1, ssf, currentMask);
+    }
+
+    public int maxProduct(String s) {
+        // we need to find two palindromic subsequence 
+        int n = s.length();
+        func(s, 0, new StringBuilder(), 0);
+        int maxProd = 1;
+        for (int i = 0; i < res.size(); i++) {
+            int p = res.get(i).str.length();
+            int currMask=res.get(i).mask;
+            for (int j = i + 1; j < res.size(); j++) {
+                int mask = res.get(j).mask;
+                if((currMask & mask) == 0)
+                    maxProd = Math.max(maxProd, p * res.get(j).str.length());
+            }
+        }
+        return maxProd;
+    }
+}
