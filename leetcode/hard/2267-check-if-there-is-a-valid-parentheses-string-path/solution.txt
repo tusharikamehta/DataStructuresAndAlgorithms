@@ -1,0 +1,38 @@
+class Solution {
+    int[][] dir = {{0, 1}, {1, 0}};
+    Boolean[][][] dp;
+    int n, m;
+
+    private boolean func(char[][] grid, int sr, int sc, int balance) {
+        if (sr >= n || sc >= m) {
+            return false;
+        }
+
+        if (grid[sr][sc] == '(') {
+            balance++;
+        } else {
+            balance--;
+        }
+
+        if (balance < 0) {
+            return false;
+        }
+
+        int remaining = (n - 1 - sr) + (m - 1 - sc);
+
+        if (balance > remaining) {
+            return false;
+        }
+
+        if (sr == n - 1 && sc == m - 1) {
+            return balance == 0;
+        }
+
+        if (dp[sr][sc][balance] != null) {
+            return dp[sr][sc][balance];
+        }
+
+        boolean ans = func(grid, sr + 1, sc, balance) ||
+                      func(grid, sr, sc + 1, balance);
+
+        return 
