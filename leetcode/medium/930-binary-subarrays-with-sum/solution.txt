@@ -1,0 +1,20 @@
+class Solution {
+    public int numSubarraysWithSum(int[] nums, int goal) {
+        // a + b = goal 
+        // a = b-goal
+        int n = nums.length;
+        int sum=0;
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0,1);
+        // 0,0,0,0,1
+        int ans=0;
+        for(int i = 0; i < n; i++){
+            sum += nums[i];
+            if(map.containsKey(sum-goal)){
+                ans+=map.get(sum-goal);
+            }
+            map.put(sum, map.getOrDefault(sum, 0)+1);
+        }
+        return ans;
+    }
+}
