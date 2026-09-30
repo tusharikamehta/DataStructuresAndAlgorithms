@@ -1,0 +1,24 @@
+{
+  "title": "Maximum Subarray Sum With Length Divisible by K",
+  "titleSlug": "maximum-subarray-sum-with-length-divisible-by-k",
+  "frontendQuestionId": "3381",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-30T03:42:26.457Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "HINT",
+  "helpLabel": "Needed hint",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-30T03:42:39.755Z"
+}

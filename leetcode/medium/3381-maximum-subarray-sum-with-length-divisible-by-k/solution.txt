@@ -1,0 +1,25 @@
+class Solution {
+    public long maxSubarraySum(int[] nums, int k) {
+        int n = nums.length;
+        long prefixSum = 0;
+        long maxAns = Long.MIN_VALUE;
+        Map<Integer, Long> map = new HashMap<>();
+        /*
+            [-1,-2,-3,-4,-5]
+            i-j
+            storing the minimum prefix sum ending at idx%k
+        */
+        map.put(0, 0L);
+        for (int i = 0; i < n; i++) {
+            prefixSum += nums[i];
+            int idx = (i+1)%k;
+            if (map.containsKey(idx)) {
+                maxAns = Math.max(maxAns, prefixSum-map.get(idx));
+            }
+            map.put(idx, Math.min(
+                    map.getOrDefault(idx, Long.MAX_VALUE),
+                    prefixSum));
+        }
+        return maxAns;
+    }
+}
