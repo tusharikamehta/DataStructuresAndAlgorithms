@@ -1,0 +1,26 @@
+{
+  "title": "Count Number of Nice Subarrays",
+  "titleSlug": "count-number-of-nice-subarrays",
+  "frontendQuestionId": "1248",
+  "leetcodeUrl": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Math",
+    "Sliding Window",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-30T03:23:47.879Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "HINT",
+  "helpLabel": "Needed hint",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-30T03:23:53.239Z"
+}

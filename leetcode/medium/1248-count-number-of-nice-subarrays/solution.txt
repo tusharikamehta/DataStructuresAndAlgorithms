@@ -1,0 +1,26 @@
+class Solution {
+    public int numberOfSubarrays(int[] nums, int k) {
+        int n= nums.length;
+        int si=0, ei=0;
+        int ans=0;
+        int oddCount=0;
+        int startWindows=0;
+        while(ei < n){
+            if(nums[ei]%2 != 0){
+                oddCount++;
+                startWindows=0;
+            }
+            while(oddCount==k){
+                startWindows++;
+                //shrink the window
+                if(nums[si]%2!=0){
+                    oddCount--;
+                }
+                si++;
+            }
+            ans+=startWindows;
+            ei++;
+        }
+        return ans;
+    }
+}
