@@ -1,14 +1,18 @@
-class Solution {
-    public long maximumSubarraySum(int[] nums, int k) {
-        int n = nums.length;
-        int si = 0, ei = 0;
-        Map<Integer, Integer> map = new HashMap<>();
-        long maxSum = .MIN_VALUE;
-        int sum=0;
-        while (ei < n) {
-            map.put(nums[ei], map.getOrDefault(nums[ei], 0) + 1);
+ault(nums[ei], 0) + 1);
             sum += nums[ei];
             while (si <= ei && ei - si + 1 > k) {
                 sum -= nums[si];
                 map.put(nums[si], map.get(nums[si]) - 1);
-                
+                if (map.get(nums[si]) == 0) {
+                    map.remove(nums[si]);
+                }
+                si++;
+            }
+            if (map.size() == k) {
+                maxSum = Math.max(maxSum, sum);
+            }
+            ei++;
+        }
+        return maxSum == Long.MIN_VALUE ? 0 : maxSum;
+    }
+}
