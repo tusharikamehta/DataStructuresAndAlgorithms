@@ -1,0 +1,30 @@
+class Solution {
+    public int minimumOperations(int[] nums, int start, int goal) {
+        // 2,8,16
+        // 0 1
+        if(start==goal) return 0;
+
+        int ans=0;
+        Queue<Integer> que = new LinkedList<>();
+        Set<Integer> set = new HashSet<>();
+        que.offer(start);
+
+        while(que.size()!=0){
+            int size=que.size();
+            while(size-->0){
+                int val = que.peek();
+                que.remove();
+                if(val == goal) return ans;
+                if(val < 0 || val > 1000 || set.contains(val)) continue;
+                set.add(val);
+                for(int num : nums){
+                    que.offer(val+num);
+                    que.offer(val-num);
+                    que.offer(val^num);
+                }
+            }
+            ans++;
+        }
+        return -1;
+    }
+}

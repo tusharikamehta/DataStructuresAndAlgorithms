@@ -1,0 +1,23 @@
+{
+  "title": "Minimum Operations to Convert Number",
+  "titleSlug": "minimum-operations-to-convert-number",
+  "frontendQuestionId": "2059",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-operations-to-convert-number/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Breadth-First Search"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-02T12:58:49.431Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-02T12:58:51.317Z"
+}
