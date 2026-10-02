@@ -1,0 +1,32 @@
+rivate void func(int n, int open, int close, StringBuilder ssf){
+        //base case
+        if(n == open && open == close){
+            ans.add(ssf.toString());
+            return;
+        }
+        
+        // we have two choices 
+        if(open < n){
+            ssf.append("(");
+            func(n, open+1, close, ssf);
+            ssf.deleteCharAt(ssf.length()-1);
+        }
+
+        if(close < open){
+            ssf.append(")");
+            func(n, open, close+1, ssf);
+            ssf.deleteCharAt(ssf.length()-1);
+        }
+    }
+    public List<String> generateParenthesis(int n) {
+        // recursion backtracking? 
+        // we have bracketts count 
+        // we need to maintain closed brackett count should always be less than or equal to open brackett and once equal return
+        if(n == 0){
+            return new ArrayList<>();
+        }
+        StringBuilder ssf = new StringBuilder();
+        func(n, 0, 0, ssf);
+        return ans;
+    }
+}
